@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 500px;
+            margin-top: 50px;
+        }
+        .form-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-switch {
+            display: none;
+        }
+        .form-switch.active {
+            display: block;
+        }
+        .input-group-text {
+            width: 40px;
+            justify-content: center;
+        }
+        .horizontal-form .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .horizontal-form .form-group .form-control {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="loginForm" class="form-switch active form-box">
+        <h2>Welcome</h2>
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="loginRegNumber" placeholder="Enter registration number" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="#" id="forgotPassword" class="btn btn-link">Forgot Password?</a>
+        </form>
+        <p>No account? <a href="#" id="showRegisterForm">Register</a></p>
+    </div>
+
+    <div id="registerForm" class="form-switch form-box">
+        <h2>Welcome</h2>
+        <form class="horizontal-form">
+            <div class="form-group">
+               
+                <input type="text" class="form-control" id="fullName" placeholder="Enter full name" required>
+            </div>
+            <div class="form-group">
+               
+                <select class="form-control" id="gender" required>
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                
+                <input type="text" class="form-control" id="course" placeholder="Enter course of study" required>
+            </div>
+            <div class="form-group">
+                
+                <input type="text" class="form-control" id="regNumber" placeholder="Enter registration number" required>
+            </div>
+            <div class="form-group">
+              
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                
+                <input type="text" class="form-control" id="residence" placeholder="Enter place of residence" required>
+            </div>
+            <div class="form-group">
+                
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p>Have an account? <a href="#" id="showLoginForm">Login</a></p>
+    </div>
+</div>
+
+<!-- Bootstrap and jQuery JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#showRegisterForm').click(function() {
+            $('#loginForm').removeClass('active');
+            $('#registerForm').addClass('active');
+        });
+
+        $('#showLoginForm').click(function() {
+            $('#registerForm').removeClass('active');
+            $('#loginForm').addClass('active');
+        });
+    });
+</script>
+</body>
+</html>
